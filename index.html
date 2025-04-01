@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delhi Fertility Academy</title>
+    <!-- Link Font Awesome for Icons (Replace with your preferred method) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Example - Choose appropriate fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Global Styles & Reset --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #1abc9c; /* Teal */
+            color: #fff;
+            border: 1px solid #1abc9c;
+        }
+
+        .btn-primary:hover {
+            background-color: #16a085;
+            border-color: #16a085;
+        }
+
+        .btn-secondary {
+            background-color: #fff;
+            color: #1abc9c; /* Teal */
+            border: 1px solid #1abc9c;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f8f9fa;
+            color: #16a085;
+            border-color: #16a085;
+        }
+
+        /* --- Header --- */
+        .top-bar {
+            background-color: #f8f9fa; /* Light grey */
+            padding: 8px 0;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .top-bar .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center on small screens */
+            align-items: center;
+            gap: 10px 20px; /* Row and column gap */
+        }
+
+        .top-bar span, .top-bar a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .top-bar i {
+            color: #1abc9c; /* Teal */
+        }
+
+        @media (min-width: 768px) {
+            .top-bar .container {
+                justify-content: flex-start; /* Align left on larger screens */
+            }
+        }
+
+        /* --- Main Navigation --- */
+        .main-nav {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            height: 50px; /* Adjust as needed */
+        }
+
+        .nav-links {
+            display: none; /* Hidden by default on mobile */
+            flex-direction: column; /* Stack on mobile toggle */
+            width: 100%;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .nav-links.active {
+            display: flex; /* Show when active */
+        }
+
+
+        .nav-links ul {
+            display: flex;
+            flex-direction: column; /* Mobile */
+            gap: 15px;
+        }
+
+        .nav-links li a {
+            font-weight: 500;
+            color: #2a3a6a; /* Dark Blue */
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li a.active { /* Style for active page link */
+            color: #1abc9c; /* Teal */
+        }
+
+        .nav-buttons {
+            display: none; /* Hidden by default on mobile */
+            gap: 10px;
+            margin-top: 15px; /* Space below links when stacked */
+            width: 100%;
+            justify-content: center;
+        }
+
+         .nav-buttons.active {
+            display: flex;
+         }
+
+        .menu-toggle {
+            display: block; /* Show hamburger on mobile */
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2a3a6a; /* Dark Blue */
+            background: none;
+            border: none;
+        }
+
+        @media (min-width: 992px) {
+            .menu-toggle {
+                display: none; /* Hide hamburger on desktop */
+            }
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                width: auto;
+                margin-top: 0;
+            }
+            .nav-links ul {
+                flex-direction: row;
+                gap: 25px;
+            }
+             .nav-buttons {
+                display: flex;
+                width: auto;
+                margin-top: 0;
+            }
+             .nav-links.active, .nav-buttons.active {
+                 /* No change needed on desktop */
+             }
+        }
+
+
+        /* --- Hero Section (Page 1) --- */
+        .hero-section {
+            background-color: #fff; /* Base background */
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden; /* Important for pseudo-elements */
+            min-height: 70vh; /* Ensure it takes significant height */
+            display: flex; /* Use flex for alignment */
+            align-items: center; /* Vertically center content */
+        }
+
+        /* Approximating curved backgrounds */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -30%;
+            width: 100%;
+            height: 150%;
+            background-color: #2a3a6a; /* Dark Blue */
+            border-radius: 0 50% 50% 0 / 0 50% 50% 0; /* Right curve */
+            transform: skewX(-15deg); /* Add skew for slant */
+            z-index: 1;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -40%;
+            width: 100%;
+            height: 200%;
+            background-color: #1abc9c; /* Teal */
+            border-radius: 50% 0 0 50% / 50% 0 0 50%; /* Left curve */
+             z-index: 1;
+        }
+
+        .hero-section .container {
+            position: relative; /* Ensure content is above pseudo-elements */
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            align-items: center;
+            gap: 30px;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px; /* Minimum width before wrapping */
+            color: #fff; /* Text color on the blue background */
+            padding-right: 20px; /* Space from the image */
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+             color: #fff; /* Ensure white color */
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            margin-bottom: 0;
+             color: #eee; /* Slightly off-white */
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+         .hero-image img {
+             max-width: 100%;
+             height: auto;
+             max-height: 500px; /* Limit image height */
+             object-fit: contain;
+             /* Potential: Add slight perspective or rotation if needed */
+         }
+
+
+        @media (max-width: 991px) {
+             .hero-section::before {
+                left: -50%;
+                width: 120%;
+                transform: skewX(-10deg);
+                border-radius: 0 40% 40% 0 / 0 40% 40% 0;
+            }
+            .hero-section::after {
+                 display: none; /* Hide teal curve on smaller screens or adjust */
+            }
+            .hero-content {
+                color: #333; /* Change text color if blue background is removed/shrunk */
+                padding-right: 0;
+                text-align: center;
+                order: 2; /* Text below image */
+            }
+             .hero-content h1 {
+                 color: #2a3a6a; /* Adjust title color if needed */
+                 font-size: 2.2rem;
+             }
+             .hero-image {
+                 order: 1; /* Image above text */
+                 margin-bottom: 30px;
+             }
+             .hero-section .container {
+                 flex-direction: column;
+             }
+        }
+
+         @media (max-width: 767px) {
+             .hero-section { padding: 40px 0; min-height: auto; }
+             .hero-content h1 { font-size: 1.8rem; }
+             .hero-content p { font-size: 0.9rem; }
+              .hero-section::before { /* Further adjust or simplify */
+                  top: -20%;
+                  height: 100%;
+                  border-radius: 0 25% 25% 0 / 0 25% 25% 0;
+              }
+         }
+
+
+        /* --- Message Sections (Page 2 & 3) --- */
+        .message-section {
+            padding: 60px 0;
+        }
+
+        .message-section .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .message-image {
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px; /* Control max image width */
+            margin: 0 auto; /* Center image if it wraps */
+        }
+
+        .message-image img {
+            border-radius: 10px; /* Optional: slightly rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-content {
+            flex: 1.5; /* Give more space to text */
+            min-width: 300px;
+        }
+
+        .message-content h2 {
+            font-size: 2rem;
+            color: #2a3a6a; /* Dark Blue */
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+         .message-content .intro {
+             font-weight: 500;
+             margin-bottom: 15px;
+             color: #555;
+         }
+
+        .message-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .message-content .signature {
+            margin-top: 20px;
+            font-weight: 500;
+            color: #333;
+        }
+        .message-content .signature span {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Style for alternating layout */
+        .message-section.reverse .container {
+            flex-direction: row-reverse; /* Reverse order */
+        }
+
+         @media (max-width: 767px) {
+             .message-section .container,
+             .message-section.reverse .container {
+                 flex-direction: column; /* Stack on small screens */
+             }
+             .message-image {
+                 margin-bottom: 30px;
+             }
+             .message-content h2 {
+                 font-size: 1.6rem;
+             }
+         }
+
+
+        /* --- Best Selling Courses (Page 4) --- */
+        .courses-section {
+            padding: 60px 0;
+            background-color: #f8f9fa; /* Light grey background */
+        }
+
+        .courses-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #2a3a6a; /* Dark Blue */
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .courses-section .intro-text {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: #555;
+        }
+
+        .course-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .course-card .academy-logo {
+            height: 30px; /* Smaller logo inside card */
+            margin: 0 auto 15px auto;
+        }
+
+        .course-card .course-image {
+            margin: 20px auto;
+            max-height: 180px; /* Limit image height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+         .course-card .course-image img {
+             max-height: 180px; /* Ensure image fits */
+             object-fit: contain;
+         }
+
+        .course-card h3 {
+            font-size: 1.2rem;
+            color: #2a3a6a; /* Dark Blue */
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* --- Contact & FAQ Section (Page 5) --- */
+        .contact-faq-section {
+            padding: 60px 0;
+        }
+
+        .contact-faq-section .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-form-container {
+            flex: 1;
+            min-width: 300px;
+            background-color: #2a3a6a; /* Dark Blue */
+            color: #fff;
+            padding: 30px;
+            border-radius: 15px; /* Rounded corners for the form block */
+        }
+
+        .contact-form-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .contact-form-container p {
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            color: #eee;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            flex: 1; /* Make inputs share space */
+            margin-bottom: 15px; /* Fallback margin if not in form-row */
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            font-size: 0.9rem;
+             color: #eee; /* Light label color */
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc; /* Adjust border color for contrast */
+            border-radius: 5px;
+            font-family: inherit;
+            background-color: #fff; /* White background for inputs */
+            color: #333; /* Dark text in inputs */
+        }
+         .form-group input::placeholder,
+         .form-group textarea::placeholder {
+             color: #999;
+         }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .recaptcha-placeholder {
+             background-color: #f9f9f9;
+             border: 1px solid #d3d3d3;
+             padding: 10px;
+             border-radius: 3px;
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+             color: #555;
+             font-size: 0.9rem;
+             margin-bottom: 20px;
+             min-height: 74px; /* Approx height of reCAPTCHA */
+         }
+         .recaptcha-placeholder span { flex-grow: 1; margin-left: 10px; }
+          .recaptcha-logo { /* Simple text placeholder for logo */
+             font-size: 0.7rem;
+             text-align: center;
+             color: #999;
+         }
+          .recaptcha-logo img { height: 30px; } /* Placeholder if using image */
+
+
+        .submit-btn {
+            background-color: #1abc9c; /* Teal */
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+             display: flex;
+             align-items: center;
+             gap: 8px;
+        }
+
+        .submit-btn:hover {
+            background-color: #16a085;
+        }
+         .submit-btn i {
+             font-size: 0.9em;
+         }
+
+        .faq-container {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .faq-container h2 {
+            font-size: 2.2rem;
+            color: #2a3a6a; /* Dark Blue */
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 15px 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #333;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: #1abc9c; /* Teal */
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            color: #555;
+             padding: 0 15px; /* Add padding when open */
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px; /* Adjust as needed for content length */
+            padding: 15px 15px 20px 0; /* Adjust padding */
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+         @media (max-width: 767px) {
+             .contact-faq-section .container {
+                 gap: 30px; /* Reduce gap */
+             }
+             .contact-form-container { padding: 25px; }
+             .contact-form-container h2 { font-size: 1.6rem; }
+             .faq-container h2 { font-size: 1.8rem; }
+             .form-row { flex-direction: column; gap: 0; } /* Stack inputs */
+         }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: #fff; /* White background */
+            color: #555; /* Grey text */
+            padding: 50px 0 30px 0;
+            border-top: 1px solid #eee; /* Subtle separator */
+        }
+
+        .footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-about .footer-logo img {
+            height: 50px; /* Match header logo size */
+            margin-bottom: 15px;
+        }
+
+        .footer-about p {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            max-width: 350px; /* Limit width */
+        }
+
+        .social-icons a {
+            color: #2a3a6a; /* Dark Blue */
+            font-size: 1.3rem;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #1abc9c; /* Teal */
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            font-size: 1.2rem;
+            color: #2a3a6a; /* Dark Blue */
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: #1abc9c; /* Teal */
+        }
+
+        .footer-contact p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        .footer-contact p strong {
+            display: block;
+            margin-bottom: 3px;
+            color: #333;
+        }
+
+
+        /* Simple Copyright (Optional - Add below footer grid) */
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <span><i class="fas fa-map-marker-alt"></i> New Delhi</span>
+            <a href="mailto:newquery@delhi-ivf.com"><i class="fas fa-envelope"></i> newquery@delhi-ivf.com</a>
+            <a href="tel:+919810600234"><i class="fas fa-phone-alt"></i> +91 9810600234, 8448441094</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Our Brochure</a>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-nav">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Delhi Fertility Academy Logo"> <!-- Replace with actual logo path -->
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="nav-links">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+             <div class="nav-buttons" id="nav-buttons">
+                <a href="#" class="btn btn-primary">Register</a>
+                <a href="#" class="btn btn-secondary">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero (Page 1) -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Welcome to Delhi Fertility Academy</h1>
+                    <p>Delhi Fertility Academy is a premier training institute dedicated to advancing the field of reproductive medicine. As an extension of Delhi IVF Centre — India's first IVF centre — we bring over three decades of pioneering experience to offer comprehensive, hands-on fellowship and IVF training courses for doctors and embryologists. Our programs are designed to provide in-depth knowledge and practical skills, empowering medical professionals with the expertise to excel in fertility treatments. At Delhi Fertility Academy, we combine world-class training, cutting-edge technology, and personalized mentorship to shape the future leaders in reproductive healthcare.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero-doctors.png" alt="Doctors at Delhi Fertility Academy"> <!-- Replace with actual image -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Founder Message (Page 2) -->
+        <section id="about" class="message-section">
+            <div class="container">
+                <div class="message-image">
+                    <img src="images/dr-anoop-gupta.png" alt="Dr. Anoop Gupta"> <!-- Replace with actual image -->
+                </div>
+                <div class="message-content">
+                    <h2>Message from Founder & Managing Director</h2>
+                    <p class="intro">Dear Colleagues,</p>
+                    <p>It is with great pride and excitement that I introduce Delhi Fertility Academy, a dedicated institution committed to advancing the field of assisted reproductive technology (ART) through world-class training. With over 32 years of experience in IVF and the privilege of helping thousands of families achieve their dreams of parenthood, I have always believed in the power of knowledge, innovation, and hands-on expertise in reproductive medicine.</p>
+                    <p>At Delhi Fertility Academy, our mission is to bridge the gap between theory and practice, equipping doctors and aspiring fertility specialists with the skills and confidence needed to excel in IVF and ART. Our comprehensive training programs are designed to provide in-depth knowledge, hands-on experience, and access to the latest advancements in the field.</p>
+                    <p>As the Founder of Delhi IVF, I have witnessed firsthand the rapid evolution of fertility treatments. Now, through this academy, I am committed to sharing my expertise and fostering the next generation of IVF specialists who will continue to transform lives.</p>
+                    <p>I invite you to be a part of this journey and take your career to new heights with Delhi Fertility Academy. Together, let us shape the future of reproductive medicine and bring hope to countless families.</p>
+                    <div class="signature">
+                        Warm regards,<br>
+                        Dr. Anoop Gupta
+                        <span>Founder of Delhi IVF & Fertility Research Centre</span>
+                        <span>IVF Specialist</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Scientific Director Message (Page 3) -->
+        <section class="message-section reverse"> <!-- Added 'reverse' class for alternating layout -->
+             <div class="container">
+                 <div class="message-image">
+                     <img src="images/mrs-alka-gupta.png" alt="Mrs Alka Gupta"> <!-- Replace with actual image -->
+                 </div>
+                 <div class="message-content">
+                     <h2>Message from Scientific Director & Senior Embryologist</h2>
+                     <p class="intro">Dear Colleagues,</p>
+                     <p>It is an honor to address you as we embark on an exciting new journey with Delhi Fertility Academy, a center dedicated to excellence in IVF training and education. With over 32 years of experience in embryology and assisted reproductive technology (ART), I have witnessed the incredible evolution of fertility science, and I strongly believe that the key to success in this field lies in continuous learning and hands-on expertise.</p>
+                     <p>Embryology is at the heart of every successful IVF procedure, and the role of an embryologist is both an art and a science. At Delhi Fertility Academy, we are committed to training the next generation of fertility specialists and embryologists by providing cutting-edge knowledge, advanced laboratory techniques, and hands-on learning experiences.</p>
+                     <p>Through this academy, we aim to empower doctors and embryologists with the skills and confidence needed to master the complexities of IVF and achieve the highest success rates. Our mission is not just to educate but to inspire innovation and set new benchmarks in reproductive medicine.</p>
+                     <p>I welcome you all to be part of this transformative journey. Let's work together to push the boundaries of fertility science and bring hope to families worldwide.</p>
+                     <div class="signature">
+                         Warm regards,<br>
+                         Mrs Alka Gupta
+                         <span>Scientific Director & Senior Embryologist</span>
+                         <span>Delhi IVF & Fertility Research Centre</span>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        <!-- Section 4: Best Selling Courses (Page 4) -->
+        <section id="courses" class="courses-section">
+            <div class="container">
+                <h2>Our Best-Selling Courses</h2>
+                <p class="intro-text">In today's fast-paced world, we understand the importance of flexibility. Our self-paced courses allow you to learn at your convenience, and upon completion, you'll receive a certification to showcase your achievement.</p>
+                <div class="course-cards">
+                    <div class="course-card">
+                        <img src="images/logo-small.png" alt="Delhi Fertility Academy Logo" class="academy-logo"> <!-- Small logo -->
+                        <div class="course-image">
+                             <img src="images/course-iui.png" alt="Intrauterine Insemination Diagram"> <!-- Replace -->
+                        </div>
+                        <h3>INTRAUTERINE INSEMINATION (IUI)</h3>
+                    </div>
+                    <div class="course-card">
+                        <img src="images/logo-small.png" alt="Delhi Fertility Academy Logo" class="academy-logo">
+                         <div class="course-image">
+                             <img src="images/course-basic-infertility.png" alt="Basic Infertility Diagram"> <!-- Replace -->
+                         </div>
+                        <h3>BASIC INFERTILITY COURSE</h3>
+                    </div>
+                    <div class="course-card">
+                        <img src="images/logo-small.png" alt="Delhi Fertility Academy Logo" class="academy-logo">
+                         <div class="course-image">
+                             <img src="images/course-embryology.png" alt="Embryology Images"> <!-- Replace -->
+                         </div>
+                        <h3>FELLOWSHIP IN EMBRYOLOGY</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Contact Form & FAQ (Page 5) -->
+        <section id="contact" class="contact-faq-section">
+            <div class="container">
+                <div class="contact-form-container">
+                    <h2>Get A Callback Within 24 Hrs</h2>
+                    <p>For Enquiries, feedback, & assistance: Mon-Sat (9:30 AM - 6:30 PM)</p>
+                    <form action="#" method="post">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <!-- <label for="first-name">First Name *</label> -->
+                                <input type="text" id="first-name" name="first_name" placeholder="First Name *" required>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="last-name">Last Name *</label> -->
+                                <input type="text" id="last-name" name="last_name" placeholder="Last Name *" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="email">Email *</label> -->
+                            <input type="email" id="email" name="email" placeholder="Email *" required>
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="mobile">Mobile Number *</label> -->
+                            <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number *" required>
+                        </div>
+                        <div class="form-group">
+                           <!-- <label for="message">Write a Message *</label> -->
+                            <textarea id="message" name="message" placeholder="Write a Message *" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="recaptcha-placeholder">
+                                <!-- Visual Placeholder for reCAPTCHA -->
+                                <input type="checkbox" id="robot-check" style="transform: scale(1.5); margin-right: 10px;">
+                                <label for="robot-check" style="color:#333; font-weight: normal;">I'm not a robot</label>
+                                <div class="recaptcha-logo">
+                                    <img src="images/recaptcha-logo.png" alt="reCAPTCHA Logo"> <!-- Replace with actual small reCAPTCHA logo if possible -->
+                                    <div style="font-size: 0.6rem;">Privacy - Terms</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">SUBMIT <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+                <div class="faq-container">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What is the course duration?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Course durations vary depending on the specific program. Please check the individual course pages for detailed information on duration and schedule.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Do we receive certificates upon completion of the course?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, upon successful completion of our courses, participants receive a certificate from Delhi Fertility Academy, acknowledging their training and acquired skills.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Do you provide separate theory and hands-on training sessions?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our programs are designed to integrate both theoretical knowledge and practical hands-on training to ensure a comprehensive learning experience.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <button class="faq-question">
+                             Is there flexibility in selecting training session durations?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer courses with varying durations and sometimes flexible scheduling options. Please contact our admissions team to discuss specific requirements.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <button class="faq-question">
+                            Do you offer hard copies of study materials?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We primarily provide digital study materials. Information regarding the availability of hard copies for specific courses can be obtained upon enquiry.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">
+                     <img src="images/logo.png" alt="Delhi Fertility Academy Logo"> <!-- Footer Logo -->
+                </a>
+                <p>Delhi Fertility Academy is a global e-learning platform founded by a team of experienced professionals in healthcare and management.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>QUICK LINKS</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#">Offline Courses</a></li>
+                    <li><a href="#courses">Online Courses</a></li>
+                    <li><a href="#contact">FAQs</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>CONTACT</h3>
+                <p>
+                    <strong>Address</strong>
+                    23, Todar Mal Lane, Bengali Market (Opp. Nathu's Sweets), Near Connaught Place
+                </p>
+                <p>
+                    <strong>Phone</strong>
+                    981-0600-234/35
+                </p>
+                <p>
+                    <strong>Email Address</strong>
+                    newquery@delhi-ivf.com
+                </p>
+            </div>
+        </div>
+         <div class="copyright">
+             © 2023 Delhi Fertility Academy. All Rights Reserved. <!-- Example Copyright -->
+         </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const navButtons = document.getElementById('nav-buttons'); // Target buttons too
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navButtons.classList.toggle('active'); // Toggle buttons visibility
+        });
+
+        // --- FAQ Accordion ---
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const questionButton = item.querySelector('.faq-question');
+
+            questionButton.addEventListener('click', () => {
+                // Check if the clicked item is already active
+                const isActive = item.classList.contains('active');
+
+                // Optional: Close all other items first
+                // faqItems.forEach(otherItem => {
+                //    if (otherItem !== item) {
+                //        otherItem.classList.remove('active');
+                //    }
+                // });
+
+                // Toggle the active class on the clicked item
+                if (isActive) {
+                    item.classList.remove('active');
+                } else {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // --- Optional: Smooth Scrolling for Nav Links ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // Only prevent default for actual internal links, not href="#"
+                if (href && href !== '#' && href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                         // Calculate offset for sticky header
+                         const headerOffset = document.querySelector('.main-nav').offsetHeight + 10; // Get header height + extra space
+                         const elementPosition = targetElement.getBoundingClientRect().top;
+                         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                         window.scrollTo({
+                             top: offsetPosition,
+                             behavior: "smooth"
+                         });
+
+                         // Close mobile menu after clicking a link
+                         if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            navButtons.classList.remove('active');
+                         }
+                    }
+                } else if (href === '#') {
+                     e.preventDefault(); // Prevent jumping for '#' links
+                     window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top
+                      // Close mobile menu after clicking a link
+                         if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            navButtons.classList.remove('active');
+                         }
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>
